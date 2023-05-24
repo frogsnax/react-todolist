@@ -5,16 +5,14 @@ import Todo from './component/Todo'
 
 
 
-// let DATA = ['Good Morning.','Good evening.','Good night.']
-
 
 
 function App() {
-
+  // Initialize an empty array to store item objects.
   const [list, setList] = useState([])
 
   
-
+  // loop through list and create a component for each array item. Stick these components into taskList
   let taskList = list.map((task,index)=> 
     <Todo 
       task={task.name} 
@@ -26,18 +24,18 @@ function App() {
     />
   )
   
+  // make a copy of list. Remove item with index matching i. Run setlist to make list match this edited array. 
   function handleDelete(i){
     const newArray = [...list]
     console.log(list)
     console.log(newArray)
     newArray.splice(i,1)
     setList(newArray)
-    
-    
   }
-    
-  function click(name,completed){
-    const newTask = {name:name, completed: completed, id: `Todo ${nanoid()}`}
+
+  // Create new obj with infor handed from Form. Stick this new obj onto the end of list.
+  function click(name){
+    const newTask = {name:name, completed: false, id: `Todo ${nanoid()}`}
     setList(list.concat(newTask))
   }
   
@@ -53,17 +51,3 @@ function App() {
 }
 
 export default App;
-
-
-//       form
-//         title
-//         textbox
-//         add 
-//       sort tasks
-//         all
-//         active
-//         completed
-//       item list
-//         name
-//         delete
-//         mark complete

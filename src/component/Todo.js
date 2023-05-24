@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 
 function Todo(props){
-
+    
+    // Call handleDelete with props.index
     function handleClick(){
         props.handleDelete(props.index)
     }
