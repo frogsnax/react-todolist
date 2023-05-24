@@ -20,16 +20,21 @@ function App() {
       id={task.id}
       key={task.id}
       handleDelete={handleDelete}
+      handleCheck={handleCheck}
       index={index}
     />
   )
   
-  // make a copy of list. Remove item with index matching i. Run setlist to make list match this edited array. 
+  // make a copy of list. Remove item with index matching i. Run setlist to make list match the value of newArray.
   function handleDelete(i){
     const newArray = [...list]
-    console.log(list)
-    console.log(newArray)
     newArray.splice(i,1)
+    setList(newArray)
+  }
+  // Make a copy of list. Edit completed property of item with index matching i. Run setList to make list match the value of newArray.
+  function handleCheck(i){
+    const newArray = [...list]
+    newArray[i].completed = !newArray[i].completed
     setList(newArray)
   }
 
