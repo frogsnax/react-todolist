@@ -30,10 +30,10 @@ body {
   top: 30%;
 }
 
-.todo{
+.incomplete-todo{
   position: relative;
   width: 100%;
-  height: 15%;
+  height: 7%;
   background-color: #ffffff;
   border: black;
   border-style: solid;
@@ -41,18 +41,46 @@ body {
   border-left: 0;
   
 }
-.todo-text{
-  /* position: absolute; */
-  margin: 0;
-  padding: 2%;
+.complete-todo{
+  text-decoration: line-through;
+  position: relative;
+  width: 100%;
+  height: 7%;
+  background-color: #9b9b9b;
+  border: black;
+  border-style: solid;
+  border-width: 1px;
+  border-left: 0;
   
 }
-.todo-button-container{
-  position: absolute;
-  height: 50%;
+.todo-text{
+  margin: 0;
+  padding: 1%;
+  padding-left: 5%;
   
+}
+#checkbox{
+  position: absolute;
+  top: 15%;
+}
+
+#delete{
+  position: absolute;
   left: 90%;
-  top: 25%
+  top: 0%;
+  height: 100%;
+  width: 50px;
+  background-color: red;
+}
+
+#done-container{
+  position: absolute;
+  left: 100%;
+  width: 100%;
+  height: 70%;
+  top: 30%;
+  border: black;
+  border-style: solid;
 }
 
 

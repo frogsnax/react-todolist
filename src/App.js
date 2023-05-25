@@ -4,13 +4,13 @@ import Form from './component/Form'
 import Todo from './component/Todo'
 
 
-
+let done = []
+let notDone = []
 
 
 function App() {
   // Initialize an empty array to store item objects.
   const [list, setList] = useState([])
-
   
   // loop through list and create a component for each array item. Stick these components into taskList
   let taskList = list.map((task,index)=> 
@@ -24,7 +24,7 @@ function App() {
       index={index}
     />
   )
-  
+
   // make a copy of list. Remove item with index matching i. Run setlist to make list match the value of newArray.
   function handleDelete(i){
     const newArray = [...list]
@@ -50,7 +50,6 @@ function App() {
       <div id="todo-container">
         {taskList}
       </div>
-      
     </div>
   );
 }

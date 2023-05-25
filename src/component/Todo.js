@@ -12,12 +12,12 @@ function Todo(props){
     }
 
     return(
-        <div id={props.id} className="todo">
-            <h1 className="todo-text">{props.task}</h1>
-            <div className="todo-button-container">
-                <input type="checkbox" checked={props.completed} className="todo-buttons" onClick={check}/>
-                <button onClick={handleClick} className="todo-buttons">X</button>
-            </div>
+        <div id={props.id} className={props.completed ? 'complete-todo':'incomplete-todo'}>
+            <p className="todo-text">{props.task}</p>
+            
+            <input type="checkbox" checked={props.completed} id="checkbox" onClick={check}/>
+            <button onClick={handleClick} id='delete'>X</button>
+            
             
         </div>
         
